@@ -23,7 +23,7 @@ For every future request, browser sends token in request
 Server gets token from request & validates token
 
 - Compare and contrast unit, integration and end-to-end tests.
-
+Unit testing is testing a single function or functionality, end to end tests are testing the user experience as if you were a user using the site. 
 
 - What is a mock? What are some things you would mock?
 
