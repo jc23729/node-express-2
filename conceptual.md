@@ -31,6 +31,7 @@ A mock is an object that simulates the behavior of an external object. Something
 
 
 - What is continuous integration?
+Continuous Integration is the practice of regularly merging small code changes that are known to work rather than waiting to merge large code blocks at the end of a development cycle.
 
 - What is an environment variable and what are they used for?
 
