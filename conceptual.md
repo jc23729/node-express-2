@@ -19,6 +19,8 @@ The signature portion of the JWT is the encoded header and payload that have bee
 
 - If a JWT is intercepted, can the attacker see what's inside the payload?
 
+Yes, the payload can be viewed by de-encoding it from base-64.
+
 - How can you implement authentication with a JWT?  Describe how it works at a high level.
 
 - Compare and contrast unit, integration and end-to-end tests.
