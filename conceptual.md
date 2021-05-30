@@ -34,10 +34,14 @@ A mock is an object that simulates the behavior of an external object. Something
 Continuous Integration is the practice of regularly merging small code changes that are known to work rather than waiting to merge large code blocks at the end of a development cycle.
 
 - What is an environment variable and what are they used for?
+An environment variable is a dynamic "object" on a computer, containing an editable value, which may be used by one or more software programs in Windows. Environment variables help programs know what directory to install files in, where to store temporary files, and where to find user profile settings
 
 - What is TDD? What are some benefits and drawbacks?
 
+TDD is Test-driven Development, which is the practice of making tests for your code before you even write it so that at first everything fails and as you write code, you get everything to pass. Some benefits are that you know that everything you are writing is being tested, but it is also very time consuming and planning-intensive compared to other methods of testing.
+
 - What is the value of using JSONSchema for validation?
+JSONSchema is valuable for making sure that your JSON API is receiving data appropriate to your database. It gives the ability to catch bad data up front, before it is sent to the database.
 
 - What are some ways to decide which code to test?
 
