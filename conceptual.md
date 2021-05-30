@@ -27,6 +27,9 @@ Unit testing is testing a single function or functionality, end to end tests are
 
 - What is a mock? What are some things you would mock?
 
+A mock is an object that simulates the behavior of an external object. Something you might mock is a call to an external API.
+
+
 - What is continuous integration?
 
 - What is an environment variable and what are they used for?
