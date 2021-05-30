@@ -15,6 +15,8 @@ JWT, or JSON Web Token, is a safe and secure method of transmitting information 
 
 - What is the signature portion of the JWT?  What does it do?
 
+The signature portion of the JWT is the encoded header and payload that have been "signed". This is used to verify that the JWT wasn't tampered with between sender and recipient.
+
 - If a JWT is intercepted, can the attacker see what's inside the payload?
 
 - How can you implement authentication with a JWT?  Describe how it works at a high level.
