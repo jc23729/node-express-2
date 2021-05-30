@@ -44,6 +44,7 @@ TDD is Test-driven Development, which is the practice of making tests for your c
 JSONSchema is valuable for making sure that your JSON API is receiving data appropriate to your database. It gives the ability to catch bad data up front, before it is sent to the database.
 
 - What are some ways to decide which code to test?
+Testing is subjective to some extent, but you should test often as your building, if your doing proffessional production I would do end to end test because it is a product that is going out into the market. 
 
 - What are some differences between Web Sockets and HTTP?
 
