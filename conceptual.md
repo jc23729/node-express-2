@@ -4,6 +4,14 @@ Answer the following questions below:
 
 - What is a JWT?
 
+-Make request with username/password to AJAX login route
+-Server authenticates & returns token in JSON
+-Token is encoded & signed with open standard, “JSON Web Token”
+-Front-end JavaScript receives token & stores (in var or localStorage)
+- For every future request, browser sends token in request
+
+Server gets token from request & validates token
+
 - What is the signature portion of the JWT?  What does it do?
 
 - If a JWT is intercepted, can the attacker see what's inside the payload?
