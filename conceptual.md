@@ -47,6 +47,9 @@ JSONSchema is valuable for making sure that your JSON API is receiving data appr
 Testing is subjective to some extent, but you should test often as your building, if your doing proffessional production I would do end to end test because it is a product that is going out into the market. 
 
 - What are some differences between Web Sockets and HTTP?
+Some major differences between web sockets and HTTP are that HTTP is stateless while web sockets are stateful, meaning that data persists beyond a request/response cycle. Communication with web sockets is also bi-direction, meaning that the server can communicate with the front end directly.
 
 - Did you prefer using Flask over Express? Why or why not (there is no right 
   answer here --- we want to see how you think about technology)?
+
+I personally hate flask, felt their wasn't enough information out there besides the course, also felt that we should have just mastered javascript instead of learning python and flask, etc. First year hires are not going to be using python, it is for machine learning and data science which requires a degree. It honestly should be optional. 
