@@ -4,13 +4,14 @@ Answer the following questions below:
 
 - What is a JWT?
 
+JWT, or JSON Web Token, is a safe and secure method of transmitting information between parties, such as between server and client.
+
 -Make request with username/password to AJAX login route
 -Server authenticates & returns token in JSON
 -Token is encoded & signed with open standard, “JSON Web Token”
 -Front-end JavaScript receives token & stores (in var or localStorage)
 - For every future request, browser sends token in request
-
-Server gets token from request & validates token
+-Server gets token from request & validates token
 
 - What is the signature portion of the JWT?  What does it do?
 
