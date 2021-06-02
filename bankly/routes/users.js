@@ -78,9 +78,14 @@ router.patch(
       if (!req.curr_admin && req.curr_username !== req.params.username) {
         throw new ExpressError(
           "Only  that user or admin can edit a user.",
-          401
-        );
+          401);
       }
+
+        // Add conditional to fix non-admins from changing their admin status
+    if (!req.curr_admin && req.body.admin) {
+      throw new ExpressError('Only an admin can set non-admins to admins.', 401);
+    }
+    
 
       // get fields to change; remove token so we don't try to change it
       let fields = { ...req.body };

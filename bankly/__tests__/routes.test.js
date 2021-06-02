@@ -129,19 +129,36 @@ describe("GET /users/[username]", function() {
 });
 
 describe("PATCH /users/[username]", function() {
-  test("should deny access if no token provided", async function() {
+  test("should deny access if no token provided", async function () {
     const response = await request(app).patch("/users/u1");
     expect(response.statusCode).toBe(401);
   });
 
-  test("should deny access if not admin/right user", async function() {
+  test("should deny access if not admin/right user", async function () {
     const response = await request(app)
       .patch("/users/u1")
       .send({ _token: tokens.u2 }); // wrong user!
     expect(response.statusCode).toBe(401);
   });
 
-  test("should patch data if admin", async function() {
+  // Tests Bug #1
+  test("should patch data if right user", async function () {
+    const response = await request(app)
+      .patch("/users/u1")
+      .send({ _token: tokens.u1, first_name: "new-fn1" }); // right user
+    expect(response.statusCode).toBe(200);
+    expect(response.body.user).toEqual({
+      username: "u1",
+      first_name: "new-fn1",
+      last_name: "ln1",
+      email: "email1",
+      phone: "phone1",
+      admin: false,
+      password: expect.any(String),
+    });
+  });
+
+  test("should patch data if admin", async function () {
     const response = await request(app)
       .patch("/users/u1")
       .send({ _token: tokens.u3, first_name: "new-fn1" }); // u3 is admin
@@ -153,18 +170,18 @@ describe("PATCH /users/[username]", function() {
       email: "email1",
       phone: "phone1",
       admin: false,
-      password: expect.any(String)
+      password: expect.any(String),
     });
   });
 
-  test("should disallowing patching not-allowed-fields", async function() {
+  test("should disallowing patching not-allowed-fields", async function () {
     const response = await request(app)
       .patch("/users/u1")
       .send({ _token: tokens.u1, admin: true });
     expect(response.statusCode).toBe(401);
   });
 
-  test("should return 404 if cannot find", async function() {
+  test("should return 404 if cannot find", async function () {
     const response = await request(app)
       .patch("/users/not-a-user")
       .send({ _token: tokens.u3, first_name: "new-fn" }); // u3 is admin
