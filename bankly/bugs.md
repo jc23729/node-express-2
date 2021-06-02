@@ -31,3 +31,8 @@ router.get('/', authUser, requireLogin, async function(req, res, next) {
   }
 }); // end
 
+Bug #5
+The authUser function in auth middleware only decodes the token. It should be verifying it to ensure it hasn't been tampered with.
+
+middleware/auth.js
+
