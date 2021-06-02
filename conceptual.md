@@ -52,4 +52,4 @@ Some major differences between web sockets and HTTP are that HTTP is stateless w
 - Did you prefer using Flask over Express? Why or why not (there is no right 
   answer here --- we want to see how you think about technology)?
 
-I personally hate flask, felt their wasn't enough information out there besides the course, also felt that we should have just mastered javascript instead of learning python and flask, etc. First year hires are not going to be using python, it is for machine learning and data science which requires a degree. It honestly should be optional. 
+I personally disliked flask, felt their wasn't enough information out there besides the course, also felt that we should have just mastered javascript instead of learning python and flask, etc. First year hires are not going to be using python, it is for machine learning and data science which requires a degree. It honestly should have been optional. 
