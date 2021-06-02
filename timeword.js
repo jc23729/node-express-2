@@ -56,3 +56,30 @@ function convertHoursToWord(hours) {
   }
   return result;
 }
+
+function convertMinutesToWords(minutes) {
+  var tens, ones, result;
+  if (minutes == "00") {
+    result = "o'clock";
+  } else if (minutes < lowWords.length) {
+    if (minutes < "10") {
+      result = `oh ${lowWords[parseInt(minutes)]}`;
+    } else {
+      result = lowWords[parseInt(minutes)];
+    }
+  } else {
+    tens = Math.floor(minutes / 10);
+    ones = minutes % 10;
+    if (tens <= 5) {
+      result = tensWords[tens - 2];
+      if (ones > 0) {
+        result += " " + lowWords[ones];
+      }
+    } else {
+      result = "unknown";
+    }
+  }
+  return result;
+}
+
+module.exports = { timeToWords, convertHoursToWord, convertMinutesToWords };
