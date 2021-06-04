@@ -58,7 +58,7 @@ function authUser(req, res, next) {
     // console.log(req.curr_admin);
     return next();
   } catch (err) {
-    console.log(err.message);
+    // console.log(err.message);
     err.status = 401;
     return next(err);
   }
