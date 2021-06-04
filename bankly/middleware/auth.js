@@ -46,14 +46,19 @@ function requireAdmin(req, res, next) {
 
 function authUser(req, res, next) {
   try {
+    console.log("authenticating authUser");
     const token = req.body._token || req.query._token;
+    console.log(token);
     if (token) {
-      let payload = jwt.verify(token); // Bug #5 - change .decode to .verify
+      let payload = jwt.verify(token, "development-secret-key"); // Bug #5 - change .decode to .verify
       req.curr_username = payload.username;
       req.curr_admin = payload.admin;
     }
+    console.log(req.curr_username);
+    console.log(req.curr_admin);
     return next();
   } catch (err) {
+    console.log(err.message);
     err.status = 401;
     return next(err);
   }
