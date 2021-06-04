@@ -1,3 +1,7 @@
+BUG #0 
+Not neccessarily a bug, but I kept getting an error with the starter code saying "Secret key or public key must be provided." 
+
+
 BUG #1
 User cannot update their own info. Caused by requireAdmin middleware. Fixed by removing requireAdmin since its being checked in the conditional
 
