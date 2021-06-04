@@ -1,5 +1,5 @@
 BUG #1
-User cannot update their own info. Caused by requireAdmin middleware. Fixed by removing requireAdmin since that's being checked in the conditional.
+User cannot update their own info. Caused by requireAdmin middleware. Fixed by removing requireAdmin since its being checked in the conditional
 
   // Tests Bug #1 
   test("should patch data if right user", async function() {
@@ -42,7 +42,7 @@ Non-admins can set themselves as admins. Test was passing because Bug #1 was pre
 
 
 Bug #3
-The getAll() method on the User class had unncessary paramaters for username and password.
+The getAll() method on the User class had unncessary paramaters for username and password, you wouldn't want to be able to get a persons sensitive information.
 
 Models/user.js
 
