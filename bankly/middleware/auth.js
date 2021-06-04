@@ -50,7 +50,7 @@ function authUser(req, res, next) {
     const token = req.body._token || req.query._token;
     console.log(token);
     if (token) {
-      let payload = jwt.verify(token, "development-secret-key"); // Bug #5 - change .decode to .verify
+      let payload = jwt.verify(token, "development-secret-key"); // Bug #0 Setup- add development-secret-key as variable, Bug #5 - change .decode to .verify
       req.curr_username = payload.username;
       req.curr_admin = payload.admin;
     }

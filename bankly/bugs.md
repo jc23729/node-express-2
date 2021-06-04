@@ -1,5 +1,5 @@
-BUG #0 
-Not neccessarily a bug, but I kept getting an error with the starter code saying "Secret key or public key must be provided." 
+BUG #0 Setup
+Not neccessarily a bug, but I kept getting an error with the starter code saying "Secret key or public key must be provided." when testing the routes. jwt. verify takes in two arguments, one is the token and the other is the secret key.
 
 
 BUG #1
@@ -93,6 +93,7 @@ router.get('/', authUser, requireLogin, async function(req, res, next) {
 Bug #5
 
 The authUser function in auth middleware only decodes the token. It should be verifying it to ensure it hasn't been tampered with.
+Also when we change it to jwt.verify must pass two parameters, the token as well as the secret key. 
 
 middleware/auth.js
 
