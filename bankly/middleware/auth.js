@@ -54,8 +54,8 @@ function authUser(req, res, next) {
       req.curr_username = payload.username;
       req.curr_admin = payload.admin;
     }
-    console.log(req.curr_username);
-    console.log(req.curr_admin);
+    // console.log(req.curr_username);
+    // console.log(req.curr_admin);
     return next();
   } catch (err) {
     console.log(err.message);
