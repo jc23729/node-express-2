@@ -1,9 +1,10 @@
 BUG #0 Setup
+<!-- Line 53 middleware/auth.js -->
 Not neccessarily a bug, but I kept getting an error with the starter code saying "Secret key or public key must be provided." when testing the routes. jwt. verify takes in two arguments, one is the token and the other is the secret key.
 
 BUG #1
 User cannot update their own info. Caused by requireAdmin middleware. Fixed by removing requireAdmin since its being checked in the conditional
-
+<!-- check under routes/users.js line 78 -->
 // Tests Bug #1
 test("should patch data if right user", async function() {
 const response = await request(app)
@@ -42,6 +43,7 @@ password: expect.any(String),
 });
 
 Bug #3
+<!-- look under models/users.js line 51  -->
 The getAll() method on the User class had unncessary paramaters for username and password, you wouldn't want to be able to get a persons sensitive information.
 
 Models/user.js
@@ -56,6 +58,7 @@ return result.rows;
 
 Bug #4
 
+<!-- line 18 -->
 The get "/" route for all users returns email and phone when it should only return username, first, and last names.
 
 routes/users.js
@@ -76,7 +79,7 @@ return next(err);
 }); // end
 
 Bug #5
-
+<!-- line 53 middleware/auth.js  -->
 The authUser function in auth middleware only decodes the token. It should be verifying it to ensure it hasn't been tampered with.
 Also when we change it to jwt.verify must pass two parameters, the token as well as the secret key.
 

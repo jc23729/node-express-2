@@ -4,7 +4,7 @@
 
 // You can trust that you’ll be given a valid string (it will always have a two-digit hour 00-23, and a two-digit minute 00-59). Hours 0-11 are am, and hours 12-23 are pm.
 
-lowWords[15]
+// lowWords[15]
 var lowWords = [
   "oh",
   "one",
@@ -100,3 +100,6 @@ function convertMinutesToWords(minutes) {
 }
 
 module.exports = { timeToWords, convertHoursToWord, convertMinutesToWords };
+
+
+console.log(timeToWords("01:23"));
