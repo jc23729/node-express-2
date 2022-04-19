@@ -30,6 +30,11 @@ var lowWords = [
 
 var tensWords = ["twenty", "thirty", "forty", "fifty"];
 
+// 1. Split the time string into hours and minutes.
+// 2. If the hours are 00 and the minutes are 00, return “midnight”.
+// 3. If the hours are 12 and the minutes are 00, return “noon”.
+// 4. If the hours are less than 12, return the hours and minutes in the format “hours am”.
+// 5. If the hours are greater than 12, return the hours and minutes in the format “hours pm”.
 
 function timeToWords(timeStr) {
   let hours = timeStr.split(":")[0];
@@ -45,6 +50,11 @@ function timeToWords(timeStr) {
   }
 }
 
+// 1. The function converts the hours to a string.
+// 2. If the hours are greater than 12, the function subtracts 12 from the hours.
+// 3. If the hours are equal to 0, the function returns the word “twelve”.
+// 4. If the hours are anything else, the function returns the word for the hours.
+
 function convertHoursToWord(hours) {
   var result;
   if (hours > "12") {
@@ -57,6 +67,12 @@ function convertHoursToWord(hours) {
   }
   return result;
 }
+
+// 1. The `convertMinutesToWords()` function takes a number of minutes as a parameter and returns a string.
+// 2. If the number of minutes is "00", the function returns "o'clock".
+// 3. If the number of minutes is less than the length of the `lowWords` array, the function returns the word at the corresponding index.
+// 4. If the number of minutes is less than the length of the `tensWords` array, the function returns the word at the corresponding index.
+// 5. If the number of minutes is greater than the length of the `tensWords` array, the function returns "unknown".
 
 function convertMinutesToWords(minutes) {
   var tens, ones, result;
